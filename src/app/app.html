@@ -1,0 +1,29 @@
+<div class="hearth-container">
+  @for (s of [1,2,3,4,5,6,7,8]; track $index) {
+  <div class="sparkle" [style.left.%]="$index * 12" [style.animation-delay.s]="$index * 0.5">
+    ✨
+  </div>
+  }
+
+  <div class="greeting-card">
+    <header class="card-header">
+      <span class="seal">25</span>
+      <p class="date-label">DECEMBER 2025</p>
+    </header>
+
+    <div class="card-body">
+      <h1 class="main-title">
+        Merry <br />
+        <span>Christmas</span>
+      </h1>
+      <div class="ornament-divider"></div>
+      <p class="personal-note">{{ message() }}</p>
+    </div>
+
+    <footer class="card-footer">
+      <button class="celebrate-btn" (click)="playCarol()">
+        @if (isRevealed()) { Blessings to You & Your Family } @else { Discover the Magic }
+      </button>
+    </footer>
+  </div>
+</div>
